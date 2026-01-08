@@ -1,0 +1,11 @@
+credentials:
+  usernames:
+    beatit:
+      email: deofis2015@gmail.com
+      name: Efosa Dave Omosigho
+      password: '$2b$12$oZMLb2imaGLSZdeeDSfLqut7u2k7VjHi/w4iJaa4DqUuK1o9pYHTi' # 'beatit123'
+
+cookie:
+  expiry_days: 30
+  key: cookie_signature_key
+  name: cookie_name

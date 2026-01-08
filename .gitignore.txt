@@ -1,0 +1,6 @@
+/Virtual_environment
+/.streamlit
+/Dataset
+/Notebook
+/Models
+/__pycache__

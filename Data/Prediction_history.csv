@@ -1,0 +1,13 @@
+REGION,TENURE,MONTANT,FREQUENCE_RECH,REVENUE,ARPU_SEGMENT,FREQUENCE,DATA_VOLUME,ON_NET,ORANGE,TIGO,REGULARITY,FREQ_TOP_PACK,Date_of_prediction,Model,Predicted Outcome,Probability
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2024-05-02,Logistic Model,Churn,96.02%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-08,Logistic Model,Churn,95.98%
+DAKAR,H 15-18 month,35,10,14,16,8,13,5,5,6,7,8,2026-01-08,Logistic Model,Churn,84.16%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-08,Logistic Model,Churn,95.98%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-08,random_forest_model,Churn,95.98%
+LOUGA,F 9-12 month,400,1,1000,600,1,0,0,0,0,0,0,2026-01-08,Logistic Model,Churn,89.46%
+LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,Logistic Model,Not Churn,89.54%
+LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,89.54%
+LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,89.54%
+LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,89.54%
+LOUGA,F 9-12 month,40,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,92.8%
+KAOLACK,F 9-12 month,40,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,92.8%
