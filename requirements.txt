@@ -44,7 +44,7 @@ PyYAML
 referencing
 requests
 rpds-py
-scikit-learn==1.4.2
+scikit-learn>=1.5.0
 scipy
 seaborn
 six
