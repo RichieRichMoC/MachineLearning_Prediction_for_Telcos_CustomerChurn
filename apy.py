@@ -1,11 +1,15 @@
 import streamlit as st
 import pandas as pd
+import os
 
 # Function to load and cache the dataset
 @st.cache_data
 def load_data():
     # Load the dataset from the Dataset folder
-    df = pd.read_csv("./Process_data/df_preprocessed.csv") 
+    # Use script directory as base to make path work on any system
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(script_dir, "Process_data", "df_preprocessed.csv")
+    df = pd.read_csv(csv_path) 
     return df
 
 def main():
