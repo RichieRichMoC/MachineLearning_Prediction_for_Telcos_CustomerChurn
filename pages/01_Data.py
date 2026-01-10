@@ -17,16 +17,20 @@ st.set_page_config(
 # Load data function
 @st.cache_data
 def load_data():
-    
-    # Call the load_data() function from app.py to get dataframe
-    df = apy.load_data()
-    # Drop 'customerID' column
-    if 'user_id' in df.columns:
-        df.drop('user_id', axis=1, inplace=True)
-    else:
-        st.error("File not found.")
+    try:
+        # Call the load_data() function from app.py to get dataframe
+        df = apy.load_data()
+        
+        # Drop 'user_id' or 'customerID' column if it exists
+        if 'user_id' in df.columns:
+            df.drop('user_id', axis=1, inplace=True)
+        elif 'customerID' in df.columns:
+            df.drop('customerID', axis=1, inplace=True)
+        
+        return df
+    except Exception as e:
+        st.error(f"Error loading data: {str(e)}")
         return None
-    return df
 
 # Function to select features based on type
 def select_features(feature_type, data_df):
