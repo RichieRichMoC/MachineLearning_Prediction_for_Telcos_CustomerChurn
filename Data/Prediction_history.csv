@@ -11,3 +11,13 @@ LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_fores
 LOUGA,F 9-12 month,400,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,89.54%
 LOUGA,F 9-12 month,40,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,92.8%
 KAOLACK,F 9-12 month,40,15,1000,600,12,300,11,13,10,16,14,2026-01-08,random_forest_model,Not Churn,92.8%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,Logistic Model,Churn,96.02%
+DAKAR,I 18-21 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,random_forest_model,Churn,96.81%
+DAKAR,J 21-24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,random_forest_model,Churn,96.81%
+DAKAR,J 21-24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,random_forest_model,Churn,96.81%
+DAKAR,J 21-24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,Logistic Model,Churn,96.81%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,Logistic Model,Churn,96.02%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,Logistic Model,Churn,90.68%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,random_forest_model,Churn,59.38%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,Logistic Model,Churn,90.68%
+DAKAR,K > 24 month,20,1,1,0,1,0,0,0,0,0,0,2026-01-19,random_forest_model,Churn,59.38%

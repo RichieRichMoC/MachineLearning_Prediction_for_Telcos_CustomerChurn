@@ -14,46 +14,13 @@ import yaml
 from yaml.loader import SafeLoader
 import sys
 
-from log_transformer import LogTransformer
-
-# Define BooleanToStringTransformer class
-class BooleanToStringTransformer(TransformerMixin):
-    def fit(self, X, y=None):
-        return self
-
-    def transform(self, X):
-        return X.astype(str)
-
-# Inject classes into __main__ namespace to handle joblib/pickle unpickling from notebook-trained models
-sys.modules['__main__'].LogTransformer = LogTransformer
-sys.modules['__main__'].BooleanToStringTransformer = BooleanToStringTransformer
-
-def patch_model(model):
-    """
-    Recursively patches a scikit-learn model to add missing attributes 
-    that might cause errors due to version mismatches.
-    """
-    from sklearn.compose import ColumnTransformer
-    from sklearn.pipeline import Pipeline
-    from sklearn.preprocessing import OneHotEncoder
-    
-    if isinstance(model, Pipeline):
-        for _, step in model.steps:
-            patch_model(step)
-    elif isinstance(model, ColumnTransformer):
-        if not hasattr(model, '_name_to_fitted_passthrough'):
-            model._name_to_fitted_passthrough = {}
-        # Recursively patch any transformers inside the ColumnTransformer
-        if hasattr(model, 'transformers_'):
-            for _, transformer, _ in model.transformers_:
-                patch_model(transformer)
-    elif isinstance(model, OneHotEncoder):
-        # Handle rename of 'sparse' to 'sparse_output' in sklearn 1.2+
-        if hasattr(model, 'sparse_output') and not hasattr(model, 'sparse'):
-            model.sparse = model.sparse_output
-        elif hasattr(model, 'sparse') and not hasattr(model, 'sparse_output'):
-            model.sparse_output = model.sparse
-    return model
+# Ensure LogTransformer is available for unpickling
+try:
+    from log_transformer import LogTransformer
+except ImportError:
+    # Fallback/Add root to path if needed (though usually streamlit handles this)
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+    from log_transformer import LogTransformer
 
 # Set Streamlit page configuration
 st.set_page_config(
@@ -68,18 +35,16 @@ if not st.session_state.get("authentication_status"):
 else:
 
     # Function to load logistic regression model
-
-    # Function to load logistic regression model
     @st.cache_data
     def load_logistic_model():
         model = joblib.load('./Models/logistic_model.joblib')
-        return patch_model(model)
+        return model
 
     # Function to load random forest model
     @st.cache_data
     def random_forest_model():
         model = joblib.load('./Models/random_forest_model.joblib')
-        return patch_model(model)
+        return model
     
     # Create function to select model
     def select_model():
